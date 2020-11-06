@@ -1,6 +1,9 @@
-# Wiki Installationsanleitung:
-https://wiki.archlinux.org/index.php/Installation_guide
-
+# Wiki
+    Installationsanleitung:
+    https://wiki.archlinux.org/index.php/Installation_guide
+    FAQ:
+    https://wiki.archlinux.org/index.php/Frequently_asked_questions
+    
 #  Downloade eine aktuelles ISO von einem der offiziellen Servern auf:
 https://www.archlinux.org/download/
 
