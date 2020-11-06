@@ -1,4 +1,4 @@
-# Downloade einew aktuelle ISO von einem der offiziellen Servern auf
+# Downloade eine aktuelles ISO von einem der offiziellen Servern auf:
 https://www.archlinux.org/download/
 
 # Z.B.:
