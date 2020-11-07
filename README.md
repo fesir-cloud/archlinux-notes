@@ -1,4 +1,3 @@
-# Wiki
     Installationsanleitung:
     https://wiki.archlinux.org/index.php/Installation_guide
     FAQ:
@@ -25,13 +24,28 @@ oder
 
 ---- 
 
-Hinweis: das bootstrap-iso ist für eine Installation aus einer existierenden Linux Installation
+    Hinweis: das bootstrap-iso ist für eine Installation aus einer existierenden Linux Installation
     Das "normale" iso (oben verlinkt) zum Erstellen eines Live-Mediums z.B. mit:
     # dd aus coreutils (Linux)
     oder 
     # dd aus multibootusb (Windows) unter "Write Image to Disk"
     Quelle: https://unix.stackexchange.com/questions/224738/which-arch-linux-file-do-i-download
----
+
+----
 
 Dann eventuellen secureboot deaktivieren und über BIOS oder UEFI das Medium booten.
+
 ----
+
+Richtige Tastatur einstellen:
+
+    loadkeys de-latin1
+    
+    Leider finde ich kein german-qwerty !!!!
+
+UEFI Boot Modus überprüfen:
+
+    ls /sys/firmware/efi/efivars && echo $?
+    
+    Wenn die Fehlervariable($?) 0 ist, ist derr EFI-Boot-Test bestanden.
+    
