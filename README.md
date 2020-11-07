@@ -49,7 +49,7 @@ UEFI Boot Modus überprüfen:
 
     ls /sys/firmware/efi/efivars && echo $?
     
-    Wenn die Fehlervariable($?) 0 ist, ist derr EFI-Boot-Test bestanden.
+Wenn die Fehlervariable($?) 0 ist, ist derr EFI-Boot-Test bestanden.
     
 ----
 
@@ -71,8 +71,8 @@ Wenn ja z.B.:
     
  Wlan-Setup:
  
-    https://wiki.archlinux.org/index.php/Iwd#iwctl 
-    (der mittels ip link herausgefundenen Name des Wlan-Gerätes ist wlan0)
+https://wiki.archlinux.org/index.php/Iwd#iwctl 
+(der mittels ip link herausgefundenen Name des Wlan-Gerätes ist wlan0)
      
     iwctl
     
@@ -127,11 +127,36 @@ Einbinden der gerade Formatierten Partitionen:
     
     swapon /dev/sda2        //SWAP aktivieren
     
-    Mit lsblk überprüfen ob  alles funktioniert hat.
+Mit lsblk überprüfen ob  alles funktioniert hat.
     
     
 # Installation:
 
     https://wiki.archlinux.org/index.php/installation_guide#Install_essential_packages
     
-    pacstrap /mnt base linux linux-firmware     //Die drei Pakete base, linux & linux-firmware in /mnt downloaden.
+    pacstrap /mnt base linux linux-firmware     //Die drei Pakete base, linux & linux-firmware in /mnt downloaden. Kann je nach Internetverbindung etwas dauern...(das St. Joseph Patienten-Wlan ist denkbar ungeeignet, weswegen ein Handy-Hotspot verwendet wurde...somit immerhon ~400-1000KiB/s -> 10:06 Minuten:Sekunden total)
+
+-- 
+
+fstab-Datei mit den Richtigen Daten füttern:
+
+     genfstab -U /mnt >> /mnt/etc/fstab     //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
