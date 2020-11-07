@@ -26,3 +26,5 @@ http://linux.rz.rub.de/archlinux/iso/2020.11.01/archlinux-2020.11.01-x86_64.iso
     Quelle: https://unix.stackexchange.com/questions/224738/which-arch-linux-file-do-i-download
 ---
 
+Dann eventuellen secureboot deaktivieren und über BIOS oder UEFI das Medium booten.
+----
