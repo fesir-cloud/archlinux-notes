@@ -56,3 +56,26 @@ UEFI Boot Modus überprüfen:
 Liste alle Netzwerkgeräte auf:
 
     ip link
+
+Überprüfe ob rfkill eines der Netzwerkgeräte soft-/oder hardblokiert:
+https://wiki.archlinux.org/index.php/Network_configuration/Wireless#Rfkill_caveat
+
+    rfkill list
+    
+Wenn ja z.B.:
+    
+    rfkill unblock wifi
+    
+ Wlan-Setup:
+ 
+    (der mittels ip link herausgefundenen Name des Wlan-Gerätes ist wlan0)
+     
+    iwctl
+    
+    device list    //Überprüfen ob der Wlan-Adapter auch im Station-Mode läuft.
+    
+    station wlan0 scan    //Scannt alle sichtbaren Netzwerke.
+    
+    station wlan0 get-networks    //Zeigt alle gerade gescannten Netzwerke an.
+    
+    station wlan0 connect <SSID>
