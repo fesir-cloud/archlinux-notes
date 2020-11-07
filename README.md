@@ -113,5 +113,20 @@ In Zukunft werde ich mich mit Btrfs auseinandersetzen müssen um mehrere Rollbac
 
 ----    
     
+Formatierung der gerade erstellten Partitionen:
+
+    mkfs.ext4 /dev/sda3     //Die Root-Partitionals Ext4 formatieren
+    
+    mkswap /dev/sda2        //SWAP als swap Partitionieren
+    
+Einbinden der gerade Formatierten Partitionen:
+
+    mount /dev/sda3 /mnt    //Die Root-Partition unter /mnt einbinden.
+    
+    swapon /dev/sda2        //SWAP aktivieren
+    
+    Mit lsblk überprüfen ob  alles funktioniert hat.
     
     
+# Installation:
+
