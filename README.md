@@ -160,8 +160,15 @@ Netzwerkkonfiguration und Initramfs erstellen:
     mkinitcpio -P               //Erstellt ein Initalesl-RAM-Dateisystem.
     
     passwd                      //Als letztes sollte noch ein Rootpasswort festgelegtt werden.
+    
+    
+    
+    
+Nun ist es vollbracht. Zum Schluss noch einmal die CHROOT treten (Strg + D) oder exit zum Verlassen derselben und 
+    
+    umount -R /mnt    
 
-
+um das gerade Installierte Dateisystem auszuwerfen, und dann sollte ein Reboot in das gerade erstellt System Booten.
 
 
 
