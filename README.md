@@ -86,10 +86,32 @@ Wenn ja z.B.:
     
     ping 8.8.8.8    //Pingt den Google-DNS-server 8.8.8.8 an um die Verbindung zu testen.
     
-Zeitsynchronisationsüberprüfung:
+# Zeitsynchronisationsüberprüfung:
 
     timedatectl set-ntp true    //Stellt die Verbindung zum vorgewählten Zeitserver her und synchronisiert
     
     timedatectl list-timezones    //Listet alle Zeitzonen auf -> Europe/Berlin
     
     timedatectl set-timezone Europe/Berlin    //Macht das offensichtliche.
+
+# Partitionierung der Festplatte:
+
+    fdisk -l    //Zeige alle vorhandenen Blockdevices(Datenspeichergeräte) -> /dev/sda
+    
+    fdisk /dev/sda    //Starte fdisk zum Partitionieren des gewählten Blockdevices
+    
+    
+----
+Beispielpartitionierung:
+    
+                    Größe           Typ
+    Partition 1:    1M //512MiB     1  (EFI System)
+    Partition 2:    9M //4GB        19 (Linux Swap)
+    Partition 3:    Rest            24 (Linux root (x86_64))
+    
+In Zukunft werde ich mich mit Btrfs auseinandersetzen müssen um mehrere Rollbacks zu erzeugen, falls mal irgendein Update schiefgeht.
+
+----    
+    
+    
+    
