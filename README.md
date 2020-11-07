@@ -140,16 +140,24 @@ Mit lsblk überprüfen ob  alles funktioniert hat.
 
 fstab-Datei mit den Richtigen Daten füttern:
 
-     genfstab -U /mnt >> /mnt/etc/fstab     //
+    genfstab -U /mnt >> /mnt/etc/fstab      //Einträge in die Filesystem-Tabelle automatisch mit UUID generieren.
+
+    arch-chroot /mnt                        //Root-Verzeichnis auf /mnt ändern: danach ist "/mnt" = "/"
+
+Zeitsynchronisation:
+
+    ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
+
+    kwclock --systohc  
 
 
+Netzwerkkonfiguration und Initramfs erstellen:
 
+    echo chyr0 > /etc/hostname  //Schreibt den Hostnamen in die entsprechende Datei.
 
-
-
-
-
-
+    mkinitcpio -P               //Erstellt ein Initalesl-RAM-Dateisystem.
+    
+    passwd                      //Als letztes sollte noch ein Rootpasswort festgelegtt werden.
 
 
 
