@@ -33,7 +33,7 @@ oder
 
 ----
 
-Dann eventuellen secureboot deaktivieren und über BIOS oder UEFI das Medium booten.
+# Dann eventuellen secureboot deaktivieren und über BIOS oder UEFI das Medium booten.
 
 ----
 
@@ -49,3 +49,10 @@ UEFI Boot Modus überprüfen:
     
     Wenn die Fehlervariable($?) 0 ist, ist derr EFI-Boot-Test bestanden.
     
+----
+
+# Setup der Internetverbindung:
+
+Liste alle Netzwerkgeräte auf:
+
+    ip link
