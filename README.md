@@ -1,3 +1,5 @@
+# Erstellen des Boot-Mediums:
+
     Installationsanleitung:
     https://wiki.archlinux.org/index.php/Installation_guide
     FAQ:
@@ -130,3 +132,6 @@ Einbinden der gerade Formatierten Partitionen:
     
 # Installation:
 
+    https://wiki.archlinux.org/index.php/installation_guide#Install_essential_packages
+    
+    pacstrap /mnt base linux linux-firmware     //Die drei Pakete base, linux & linux-firmware in /mnt downloaden.
