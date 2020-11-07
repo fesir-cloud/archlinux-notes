@@ -19,6 +19,10 @@ http://linux.rz.rub.de/archlinux/iso/2020.11.01/archlinux-2020.11.01-x86_64.iso
     md5sum <Pfad\zur\ISO>
 ---- 
     Hinweis: das bootstrap-iso ist für eine Installation aus einer existierenden Linux Installation
-    Das "normale" iso (oben verlinkt) zum Erstellen eines Live-Mediums z.B. mit dd oder Unetbootin oder multibootusb. 
-    https://unix.stackexchange.com/questions/224738/which-arch-linux-file-do-i-download
+    Das "normale" iso (oben verlinkt) zum Erstellen eines Live-Mediums z.B. mit:
+    # dd aus coreutils (Linux)
+    oder 
+    # dd aus multibootusb (Windows) unter "Write Image to Disk"
+    Quelle: https://unix.stackexchange.com/questions/224738/which-arch-linux-file-do-i-download
 ---
+
