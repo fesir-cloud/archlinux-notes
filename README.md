@@ -58,7 +58,8 @@ Liste alle Netzwerkgeräte auf:
     ip link
 
 Überprüfe ob rfkill eines der Netzwerkgeräte soft-/oder hardblokiert:
-https://wiki.archlinux.org/index.php/Network_configuration/Wireless#Rfkill_caveat
+    
+    https://wiki.archlinux.org/index.php/Network_configuration/Wireless#Rfkill_caveat
 
     rfkill list
     
@@ -68,6 +69,7 @@ Wenn ja z.B.:
     
  Wlan-Setup:
  
+    https://wiki.archlinux.org/index.php/Iwd#iwctl 
     (der mittels ip link herausgefundenen Name des Wlan-Gerätes ist wlan0)
      
     iwctl
@@ -78,4 +80,16 @@ Wenn ja z.B.:
     
     station wlan0 get-networks    //Zeigt alle gerade gescannten Netzwerke an.
     
-    station wlan0 connect <SSID>
+    station wlan0 connect <SSID>    //Hierauf wird für das Passwort gepromptet.
+    
+    exit
+    
+    ping 8.8.8.8    //Pingt den Google-DNS-server 8.8.8.8 an um die Verbindung zu testen.
+    
+Zeitsynchronisationsüberprüfung:
+
+    timedatectl set-ntp true    //Stellt die Verbindung zum vorgewählten Zeitserver her und synchronisiert
+    
+    timedatectl list-timezones    //Listet alle Zeitzonen auf -> Europe/Berlin
+    
+    timedatectl set-timezone Europe/Berlin    //Macht das offensichtliche.
