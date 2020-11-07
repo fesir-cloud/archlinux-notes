@@ -153,6 +153,8 @@ Zeitsynchronisation:
 
 Netzwerkkonfiguration und Initramfs erstellen:
 
+    printf "127.0.0.1    localhost\n::1    localhost\n">/etc/hosts      //identifiziert 127.0.0.1 und ::1 als localhost
+
     echo chyr0 > /etc/hostname  //Schreibt den Hostnamen in die entsprechende Datei.
 
     mkinitcpio -P               //Erstellt ein Initalesl-RAM-Dateisystem.
