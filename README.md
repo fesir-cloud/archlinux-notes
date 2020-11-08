@@ -210,7 +210,7 @@ Anlegen eines Nutzerprofiles und hoinzufügen der Benutzers zu den wichtigen Gru
     
     usermod -aG wheel,audio,vider,optical,storage chyrone
     
-Installieren des sudo Befehls und hinzufügen des Privilegs des Ausführens aller Kommandos aller Mitglieder der wheel Gruppe:
+Installieren des sudo Befehls und hinzufügen des Privilegs des Ausführens aller Kommandos mit sudo für Mitglieder der wheel Gruppe:
 
     pacman -Sy sudo
     
@@ -229,16 +229,27 @@ Bootloader:
     
     grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
 
+    grub-mkconfig mkconfig -o /boot/grub/grub.cfg
 
 
+Nun ist es vollbracht. EIn funktionale Arch-Linux ist nun installiert. Zum Schluss noch einmal die CHROOT treten (Strg + D) oder exit zum Verlassen derselben und umount -R /mnt und um das gerade Installierte Dateisystem auszuwerfen, und dann sollte ein Reboot in das gerade erstellt System Booten.
 
-Nun ist es vollbracht. Zum Schluss noch einmal die CHROOT treten (Strg + D) oder exit zum Verlassen derselben und 
+Es ist aber ratsam jetzt schon ein par weitere Pakete zu installieren, da hier einfach die Möglichkeit dessen besteht:
+
+    pacman -S networkmanager vim
     
-    umount -R /mnt    
+SystemD-Einheit des NetworkManagers aktivieren:    
+    
+    systemctl enable NetworkManager    
+    
+    
+Jetzt aber wirklich:
 
-um das gerade Installierte Dateisystem auszuwerfen, und dann sollte ein Reboot in das gerade erstellt System Booten.
-
-
+    exit
+    
+    umount -l /mnt
+    
+    
 
 
 
