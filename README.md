@@ -115,8 +115,8 @@ Beispielpartitionierung:
 Alternativ:
 
                     Größe           Typ
-    Partition 1:    1M //512MiB     1  (EFI System)             FAT32
-    Partition 2:    9M //4GB        19 (Linux Swap)             swapon
+    Partition 1:    550MiB (+550M)  1  (EFI System)             FAT32
+    Partition 2:    9M (+2G)        19 (Linux Swap)             swapon
     Partition 3:    Rest            20 (Linux filesystem)       ext4
     
     
@@ -137,11 +137,11 @@ In Zukunft werde ich mich mit Btrfs auseinandersetzen müssen um mehrere Rollbac
 Formatierung der gerade erstellten Partitionen:
 
 
-    mkfs.fav -F32 /dev/sda1 //in der 
+    mkfs.fat -F32 /dev/sda1 //EFI-Partition als FAT32 partitionieren.
 
-    mkfs.ext4 /dev/sda3     //Die Root-Partitionals Ext4 formatieren
+    mkfs.ext4 /dev/sda3     //Root-Partitionals Ext4 formatieren.
     
-    mkswap /dev/sda2        //SWAP als swap Partitionieren
+    mkswap /dev/sda2        //SWAP-Partition als Linuxswap Partitionieren
     
 Einbinden der gerade Formatierten Partitionen:
 
@@ -158,13 +158,17 @@ Mit lsblk überprüfen ob  alles funktioniert hat.
     
     pacstrap /mnt base linux linux-firmware     //Die drei Pakete base, linux & linux-firmware in /mnt downloaden. Kann je nach Internetverbindung etwas dauern...(das St. Joseph Patienten-Wlan ist denkbar ungeeignet, weswegen ein Handy-Hotspot verwendet wurde...somit immerhon ~400-1000KiB/s -> 10:06 Minuten:Sekunden total)
 
--- 
+--- 
 
 fstab-Datei mit den Richtigen Daten füttern:
 
     genfstab -U /mnt >> /mnt/etc/fstab      //Einträge in die Filesystem-Tabelle automatisch mit UUID generieren.
 
+
+Wechseln des Root-Verszeichnisses auf die als /mnt gemountete /dev/sda 
+
     arch-chroot /mnt                        //Root-Verzeichnis auf /mnt ändern: danach ist "/mnt" = "/"
+
 
 Zeitsynchronisation:
 
@@ -175,13 +179,13 @@ Zeitsynchronisation:
 
 Netzwerkkonfiguration und Initramfs erstellen:
 
-    printf "127.0.0.1    localhost\n::1    localhost\n">/etc/hosts      //identifiziert 127.0.0.1 und ::1 als localhost
+    printf "127.0.0.1    localhost\n::1    localhost\n" > /etc/hosts    //identifiziert 127.0.0.1 und ::1 als localhost
 
-    echo chyr0 > /etc/hostname  //Schreibt den Hostnamen in die entsprechende Datei.
+    echo chyr0 > /etc/hostname                                          //Schreibt den Hostnamen in die entsprechende Datei.
 
-    mkinitcpio -P               //Erstellt ein Initalesl-RAM-Dateisystem.
+    mkinitcpio -P                                                       //Erstellt ein Initalesl-RAM-Dateisystem.
     
-    passwd                      //Als letztes sollte noch ein Rootpasswort festgelegtt werden.
+    passwd                                                              //Als letztes sollte noch ein Rootpasswort festgelegtt werden.
     
     
     
