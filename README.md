@@ -177,19 +177,61 @@ Zeitsynchronisation:
     hwclock --systohc  
 
 
+Installation von nano und VIM sowie Einstellung der Locals:
+
+     pacman -S nano vim
+     
+     echo de_DE.UTF-8 UTF-8 >> /etc/locale.gen      //Diese Zeile kann auch einfach mit nano oder VIM von dem führenden '#' Zeichen befreit und damit aktiviert werden. 
+
+     locale-gen                                     //Gerade gewählte Localisierung aktivieren: Es ist erkennbar an der Ausgabe dieses Befehles ob es funktioniert hat.
+     
+     echo LANG=de_DE.UTF-8 > /etc/locale.conf       //Sprach-Codec persistieren.
+     
+     echo KEYMAP=de-latin1 > /etc/vconsole.conf     //Tastaturlayout persistieren.
+
+
 Netzwerkkonfiguration und Initramfs erstellen:
 
-    printf "127.0.0.1    localhost\n::1    localhost\n" > /etc/hosts    //identifiziert 127.0.0.1 und ::1 als localhost
+    printf "127.0.0.1    localhost\n::1    localhost\n127.0.1.1     chyr0.localdomain	chyr0" > /etc/hosts    //identifiziert 127.0.0.1 und ::1 als localhost
 
     echo chyr0 > /etc/hostname                                          //Schreibt den Hostnamen in die entsprechende Datei.
 
     mkinitcpio -P                                                       //Erstellt ein Initalesl-RAM-Dateisystem.
     
+RootPasswort festlegen:    
+    
     passwd                                                              //Als letztes sollte noch ein Rootpasswort festgelegtt werden.
     
+Anlegen eines Nutzerprofiles und hoinzufügen der Benutzers zu den wichtigen Gruppen:
+    
+    useradd chyrone
+    
+    passwd chyrone
+    
+    usermod -aG wheel,audio,vider,optical,storage chyrone
+    
+Installieren des sudo Befehls und hinzufügen des Privilegs des Ausführens aller Kommandos aller Mitglieder der wheel Gruppe:
+
+    pacman -Sy sudo
+    
+    printf "%wheel ALL=(ALL) ALL" >> visudo
     
     
+Bootloader:    
     
+    pacman -S grub
+    
+    pacman -S efibootmgr dosfstools os-prober mtools
+    
+    mkdir /boot/EFI
+    
+    mount /dev/sda1 /boot/EFI
+    
+    grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
+
+
+
+
 Nun ist es vollbracht. Zum Schluss noch einmal die CHROOT treten (Strg + D) oder exit zum Verlassen derselben und 
     
     umount -R /mnt    
