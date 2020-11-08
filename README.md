@@ -106,10 +106,19 @@ https://wiki.archlinux.org/index.php/Iwd#iwctl
 ----
 Beispielpartitionierung:
     
+                    Größe           Typ                         Format
+    Partition 1:    1M //512MiB     1  (EFI System)             
+    artition 2:    9M //4GB        19 (Linux Swap)             swapon
+    Partition 3:    Rest            24 (Linux root (x86_64))    ext4
+    
+    
+Alternativ:
+
                     Größe           Typ
-    Partition 1:    1M //512MiB     1  (EFI System)
-    Partition 2:    9M //4GB        19 (Linux Swap)
-    Partition 3:    Rest            24 (Linux root (x86_64))
+    Partition 1:    1M //512MiB     1  (EFI System)             FAT32
+    Partition 2:    9M //4GB        19 (Linux Swap)             swapon
+    Partition 3:    Rest            20 (Linux filesystem)       ext4
+    
     
 Es wird Partitioniert indem fdisk benutzt wir, wie im folgenden erklärt:
 
@@ -126,6 +135,9 @@ In Zukunft werde ich mich mit Btrfs auseinandersetzen müssen um mehrere Rollbac
 ----    
     
 Formatierung der gerade erstellten Partitionen:
+
+
+    mkfs.fav -F32 /dev/sda1 //in der 
 
     mkfs.ext4 /dev/sda3     //Die Root-Partitionals Ext4 formatieren
     
