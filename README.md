@@ -111,6 +111,16 @@ Beispielpartitionierung:
     Partition 2:    9M //4GB        19 (Linux Swap)
     Partition 3:    Rest            24 (Linux root (x86_64))
     
+Es wird Partitioniert indem fdisk benutzt wir, wie im folgenden erklärt:
+
+    fdisk /dev/sda
+    Command: p      //Zeige aktuelle Partitionstabelle
+    Command: n      //Neuse Partition gefolgt von der Definition der Partition über Erster und letzter Sektor, sowie Typ der Partition
+    Command: w      //Schreiben der Tabelle
+    Command: a      //Bootflag
+    Command: m      //help
+    
+    
 In Zukunft werde ich mich mit Btrfs auseinandersetzen müssen um mehrere Rollbacks zu erzeugen, falls mal irgendein Update schiefgeht.
 
 ----    
