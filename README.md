@@ -158,7 +158,7 @@ Zeitsynchronisation:
 
     ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 
-    kwclock --systohc  
+    hwclock --systohc  
 
 
 Netzwerkkonfiguration und Initramfs erstellen:
