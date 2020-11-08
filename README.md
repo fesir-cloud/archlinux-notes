@@ -108,7 +108,7 @@ Beispielpartitionierung:
     
                     Größe           Typ                         Format
     Partition 1:    1M //512MiB     1  (EFI System)             
-    artition 2:    9M //4GB        19 (Linux Swap)             swapon
+    Partition 2:    9M //4GB        19 (Linux Swap)             swapon
     Partition 3:    Rest            24 (Linux root (x86_64))    ext4
     
     
