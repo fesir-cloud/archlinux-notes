@@ -4,6 +4,12 @@
 ----
 ----
 
+Bitte folgendes Setup als user in ~ ausführen: "sudo chyr0"
+
+----
+----
+----
+
 
 Zuerst werden einige Pakete mit pacman installiert:
 
@@ -30,5 +36,7 @@ Z. B. Installation für Intel:
     
 # Installation des AUR-Managers YAY per git clone:
 
-    git clone
+    git clone https://aur.archlinux.org/yay-git.git
+    
+    makepkg -si
 
