@@ -204,9 +204,9 @@ RootPasswort festlegen:
     
 Anlegen eines Nutzerprofiles und hoinzufügen der Benutzers zu den wichtigen Gruppen:
     
-    useradd chyrone
+    useradd -m chyr0
     
-    passwd chyrone
+    passwd chyr0
     
     usermod -aG wheel,audio,vider,optical,storage chyrone
     
