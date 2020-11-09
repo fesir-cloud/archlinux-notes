@@ -106,13 +106,6 @@ https://wiki.archlinux.org/index.php/Iwd#iwctl
 ----
 Beispielpartitionierung:
     
-                    Größe           Typ                         Format
-    Partition 1:    1M //512MiB     1  (EFI System)             
-    Partition 2:    9M //4GB        19 (Linux Swap)             swapon
-    Partition 3:    Rest            24 (Linux root (x86_64))    ext4
-    
-    
-Alternativ:
 
                     Größe           Typ
     Partition 1:    550MiB (+550M)  1  (EFI System)             FAT32
