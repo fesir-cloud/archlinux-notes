@@ -13,7 +13,7 @@ Zuerst werden einige Pakete mit pacman installiert:
     
 Je nach verbauter Grafikkarte wird ein passender Grafiktreiber gewählt:
 
-    Brand   Driver              OpenGL      OpenGL(multilib)    Documentation 
+    Brand   Driver                  OpenGL      OpenGL(multilib)    Documentation 
     AMD 	xf86-video-amdgpu 	mesa 	lib32-mesa 	https://wiki.archlinux.org/index.php/AMDGPU
     ATI     xf86-video-ati          mesa    lib32-mesa      https://wiki.archlinux.org/index.php/ATI
     Intel 	xf86-video-intel 	mesa 	lib32-mesa 	https://wiki.archlinux.org/index.php/Intel_graphics
