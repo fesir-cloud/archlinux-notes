@@ -20,6 +20,10 @@ Zuerst werden einige Pakete mit pacman installiert:
                 //vim -> texteditor
                 //git -> GitLab software
                 //xorg -> X : Grundlage für Grafische Fenster- und Videoanzeige
+                //base-devel -> Paketesammlung zum kompilieren von Software z. B. für yay aber auch andere wichtige Entwicklerprogramme ( https://www.archlinux.org/groups/x86_64/base-devel/ )
+                //nitrogen -> Wallpaper manager
+                //picom -> Comoser
+                //firefox -> ...
 
 # Grafiktreiber je nach Grafikkarte:
 
@@ -46,6 +50,9 @@ Z. B. Installation für Intel:
     cd yay-git
     
     makepkg -si
+    
+    
+# 
     
     
 
