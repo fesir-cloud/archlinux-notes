@@ -4,7 +4,10 @@
 ----
 ----
 
-Bitte folgendes Setup als user in ~ ausführen: "sudo chyr0"
+Bitte folgendes Setup als user in ~ ausführen, entweder direkt als user anmelden, oder: 
+
+    sudo chyr0
+    cd ~
 
 ----
 ----
@@ -38,5 +41,11 @@ Z. B. Installation für Intel:
 
     git clone https://aur.archlinux.org/yay-git.git
     
+    chmod 700 yay-git
+    
+    cd yay-git
+    
     makepkg -si
+    
+    
 
