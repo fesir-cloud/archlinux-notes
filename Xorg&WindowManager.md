@@ -1,5 +1,10 @@
 # Xorg und Window Manager Installation:
 
+----
+----
+----
+
+
 Zuerst werden einige Pakete mit pacman installiert:
 
     pacman -Sy vim git xorg xorg-xinit nitrogen picom base-devel firefox
