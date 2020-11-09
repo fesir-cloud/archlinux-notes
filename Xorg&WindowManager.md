@@ -20,7 +20,7 @@ Zuerst werden einige Pakete mit pacman installiert:
                 //vim -> texteditor
                 //git -> GitLab software
                 //xorg -> X : Grundlage für Grafische Fenster- und Videoanzeige
-                //base-devel -> Paketesammlung zum kompilieren von Software z. B. für yay aber auch andere wichtige Entwicklerprogramme ( https://www.archlinux.org/groups/x86_64/base-devel/ )
+                //base-devel -> Paketesammlung von 24 wichtigen Entwicklerprogrammen ( https://www.archlinux.org/groups/x86_64/base-devel/ ) zum Beispiel grep zum suchen oder make zum Kompilieren von Software z. B. hier für YAYbenutzt
                 //nitrogen -> Wallpaper manager
                 //picom -> Comoser
                 //firefox -> ...
@@ -49,10 +49,27 @@ Z. B. Installation für Intel:
     
     cd yay-git
     
-    makepkg -si
+    makepkg -si     //Mehrmals mit Y bestätigen
     
+Jetzt ist YAY installiert.
     
-# 
-    
-    
+# Installation von dwm (WindowManager) von Distrotubes AUR:
 
+    yay -S dwm-distrotube-git st-distrotube-git dmenu-distrotube-git
+    
+    // Ein par mal mit enter bestätigen und userpasswortabfragen beantworten.
+    
+    
+    
+# Xinit Setup:
+
+    cp /etc/X11/xinit/xinitrc /home/chyr0/.xinitrc      //Wichtig ist der Punkt vor dem 2. xinitrc
+    
+    nano /home/chyr0/.xinitrc
+       
+        
+        >
+        >
+        >
+        >
+        >
