@@ -45,7 +45,7 @@ Z. B. Installation für Intel:
 
     git clone https://aur.archlinux.org/yay-git.git
     
-    chmod 700 yay-git
+    chmod 777 yay-git
     
     cd yay-git
     
@@ -53,11 +53,13 @@ Z. B. Installation für Intel:
     
 Jetzt ist YAY installiert.
     
-# Installation von dwm (WindowManager) von Distrotubes AUR:
-
-    yay -S dwm-distrotube-git st-distrotube-git dmenu-distrotube-git
     
-    // Ein par mal mit enter bestätigen und userpasswortabfragen beantworten.
+    
+    
+    
+# Installation von dwm (DynamicWindowManager) von Distrotubes AUR:
+
+    yay -S dwm-distrotube-git st-distrotube-git dmenu-distrotube-git        // Ein par mal mit enter bestätigen und userpasswortabfragen beantworten.
     
     
     
