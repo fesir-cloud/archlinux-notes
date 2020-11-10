@@ -229,7 +229,7 @@ Nun ist es vollbracht. EIn funktionale Arch-Linux ist nun installiert. Zum Schlu
 
 Es ist aber ratsam jetzt schon ein par weitere Pakete zu installieren, da hier einfach die Möglichkeit dessen besteht:
 
-    pacman -S networkmanager vim
+    pacman -S networkmanager vim pv nmap 
     
 SystemD-Einheit des NetworkManagers aktivieren:    
     
