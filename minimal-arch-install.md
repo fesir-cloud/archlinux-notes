@@ -197,7 +197,7 @@ RootPasswort festlegen:
     
 Anlegen eines Nutzerprofiles und hoinzufügen der Benutzers zu den wichtigen Gruppen:
     
-    useradd -m chyr0        //Die m Flag erstellt zum Nutzer direkt einen Benutzerordner unter /home
+    useradd -m -g wheel chyr0        //Die m Flag erstellt zum Nutzer direkt einen Benutzerordner unter /home Flag fügt ihn einer darauf folgenden Gruppe hinzu
     
     passwd chyr0
     
