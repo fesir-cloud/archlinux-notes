@@ -76,3 +76,10 @@ Die letzten 5 Zeilen löschen und folgende Zeilen einfügen:
         >exec dwn
 
 
+# Wallpapers von Distrotube:
+
+    git clone https://gitlab.com/dwt1/wallpapers.git
+
+    nitrogen //Ordner über GUI auswählen
+    
+    xrandr //Scalesize
