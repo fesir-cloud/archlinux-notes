@@ -63,22 +63,16 @@ Jetzt ist YAY installiert.
     
     
     
-# Xinit Setup:
+# Xinit Konfig:
 
     cp /etc/X11/xinit/xinitrc /home/chyr0/.xinitrc      //Wichtig ist der Punkt vor dem 2. xinitrc
     
-    nano /home/chyr0/.xinitrc       //Die letzten 5 Zeilen löschen und folgende Zeilen einfügen
-       
-        
+    nano /home/chyr0/.xinitrc       
+    
+Die letzten 5 Zeilen löschen und folgende Zeilen einfügen:
+              
         >nitrogen --restore &
         >picom &
         >exec dwn
 
 
-//lauft noch nicht da xterm aus irgendeinem grund vergessen wurde...
-
-
-        pacman -S xterm
-
-
-//jetzt startet es mit >Grafik abe rnur unter root
